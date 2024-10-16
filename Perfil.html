@@ -1,0 +1,240 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Avistave</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="2 - estilos.css">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+            <script src="scrip.js" defer></script>
+
+        </head>
+    
+        <body>
+
+            <div class="wrapper">
+
+            <header>
+                <div class="left-section">
+                  <a href="index.html">
+                      <img class="logo" src="PAJARRACO_ALT.png" alt="AVISTAVE">
+                  </a>
+              </div>
+        
+                <div class="right-section">
+                  <a href="#" class="icon" onclick="toggleMenu('navegador_notif') ; event.stopPropagation();">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="pfp" onclick="toggleMenu('navegador_perfil'); event.stopPropagation();">
+                  <img src="icon.jpg" alt="FOTO_DE_PERFIL">
+              </a>
+                </div>
+            </header>
+        
+            <nav id="navegador_perfil" class="dropdown-menu" style="display: none;"> 
+                <ul>
+                    <li><a href="Perfil.html"><img src="icon.jpg" alt="Profile_Picture"></a></li>
+                    <li><a href="Perfil.html">Perfil</a></li>
+                    <li><a href="#">Guardados</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </nav>
+        
+            <nav id="navegador_notif" class="dropdown-menu" style="display: none;">
+                <ul>
+                    <li><h3>Notificaciones</h3></li>
+                    <li><a href="#">[Nombre] te ha comenzado a seguir</a></li>
+                    <li><a href="#">[Nombre] te ha comenzado a seguir</a></li>
+                    <li><a href="#">[¡Medalla obtenida! Primera publicación]</a></li>
+                </ul>
+            </nav>
+
+
+            <div class="sidebar">
+                <ul>
+                <li><a href="index.html" class = "iconside">
+                  <i class="fa fa-home" aria-hidden="true"></i>  Inicio</a></li>
+                  <li><a href="Publish.html" class = "iconside">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i>  Publicar</a></li>
+                  <li><a href="Forums.html" class = "iconside">
+                  <i class="fa fa-comments" aria-hidden="true"></i>  Foros</a></li>
+                  <li><a href="Perfil.html" class="iconside">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>  Perfil</a></li>
+                  <li><a href="#" class="iconside">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i>  Guardados</i></a></li>
+                  <li><a href="#" class="iconside">
+                    <i class="fa fa-cog" aria-hidden="true"></i>  Configuración</a></li>
+                  <li><a href="#" class="iconside">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>  Ayuda</a></li>
+              </ul>
+              </div>
+
+        <main>
+
+
+            <div class="profile-container">
+                <h1 id="welcome-message">Bienvenido, testinguser</h1>
+        
+                
+        <!-- Profile Picture Section -->
+        <div class="profile-picture-section">
+            <div class="picture-wrapper">
+                <img id="profile-picture" src="icon.jpg" alt="Profile Picture">
+                <i class="fa fa-pencil" aria-hidden="true" id="edit-picture"></i> <!-- Font Awesome 4 icon -->
+            </div>
+            <input type="file" id="upload-picture" accept="image/*" style="display: none;">
+        
+            <div class="auxilio">
+            <div class="adicionales">
+                <div class="stats">
+                    <h2>6</h2><p>Publicaciones</p>
+                </div>
+                    <div class="stats">
+                    <h2>17</h2><p>Seguidores</p>
+                    </div>
+                    <div class="stats">
+                    <h2>35</h2><p>Me gusta</p>
+                    </div>
+                </div>
+                    <div class="auxilio2">
+                    <div class="nodoymas"><h4>@<span id="username">testinguser</span></h4></div>
+                <div class="nodoymas">Añade una descripción</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Username and Nickname Section -->
+        <div class="user-info">
+            <p>Nickname: <span id="nickname-display">(no nickname)</span> 
+                <i class="fa fa-pencil" aria-hidden="true" id="edit-nickname"></i> <!-- Font Awesome 4 icon -->
+            </p>
+            <div id="nickname-editor" style="display: none;">
+                <input type="text" id="nickname-input" placeholder="Enter a nickname">
+                <button id="save-nickname">Save Nickname</button>
+            </div>
+        </div>
+        
+                <!-- User Publications Section -->
+                <div class="publications-section">
+                    <hr class="solid">
+                    <div class="publications-grid">
+                        <!-- Example publication containers (these will be generated dynamically) -->
+                        <div class="publication">Publication 1</div>
+                        <div class="publication">Publication 2</div>
+                        <div class="publication">Publication 3</div>
+                        <div class="publication">Publication 4</div>
+                        <div class="publication">Publication 5</div>
+                        <div class="publication">Publication 6</div>
+                    </div>
+                </div>
+            </div>
+                
+        </main>
+
+        <footer>
+            <!-- Puedes incluir aquí el mismo pie de página que en tu página principal -->
+            <footer>
+                <div class="footer-content">
+                  
+                  <a href="index.html" class = "icon" onClick="Home()">
+                    <i class="fa fa-home" aria-hidden="true"></i></a>
+                  <a href="Publish.html" class = "icon" onClick="Upload()">
+                    <i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                  <a href="Forums.html" class = "icon" onClick="Forums()">
+                    <i class="fa fa-comments" aria-hidden="true"></i></a>
+          
+                </div>
+              </footer>
+            </div>
+
+              <script>
+                // Keep track of the currently open menu
+                var currentMenu = null;
+            
+                function toggleMenu(menuId) {
+                    var menu = document.getElementById(menuId);
+            
+                    // If a different menu is already open, hide it
+                    if (currentMenu && currentMenu !== menu) {
+                        currentMenu.style.display = 'none';
+                    }
+            
+                    // Toggle the clicked menu
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    } else {
+                        menu.style.display = 'block';
+                    }
+            
+                    // Update the current menu
+                    currentMenu = menu;
+                }
+            
+                // Function to close the menu when clicking outside
+                function closeMenuOutside(event) {
+                    if (currentMenu && !currentMenu.contains(event.target)) {
+                        currentMenu.style.display = 'none';
+                        currentMenu = null;
+                    }
+                }
+            
+                // Attach the event listener to the document
+                document.addEventListener('click', closeMenuOutside);
+            
+            //auxiliooo
+            
+// profile section -------------------------------------------------
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const welcomeMessage = document.getElementById('welcome-message');
+    const nicknameDisplay = document.getElementById('nickname-display');
+    const nicknameInput = document.getElementById('nickname-input');
+    const saveNicknameButton = document.getElementById('save-nickname');
+    const profilePicture = document.getElementById('profile-picture');
+    const uploadPicture = document.getElementById('upload-picture');
+    const editNicknameIcon = document.getElementById('edit-nickname');
+    const nicknameEditor = document.getElementById('nickname-editor');
+    const editPictureIcon = document.getElementById('edit-picture');
+
+    // Show nickname input when clicking pen icon
+    editNicknameIcon.addEventListener('click', () => {
+        nicknameEditor.style.display = 'block';
+        nicknameInput.focus();
+    });
+
+    // Handle nickname change
+    saveNicknameButton.addEventListener('click', () => {
+        const nickname = nicknameInput.value.trim();
+        if (nickname) {
+            nicknameDisplay.textContent = nickname;
+            welcomeMessage.textContent = `Bienvenido, ${nickname}`;
+            nicknameEditor.style.display = 'none'; // Hide input once nickname is saved
+        }
+    });
+
+    // Show file upload when clicking pen icon next to profile picture
+    editPictureIcon.addEventListener('click', () => {
+        uploadPicture.click();
+    });
+
+    // Handle profile picture change
+    uploadPicture.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                profilePicture.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+
+                </script>
+
+
+    </body>
+</html>

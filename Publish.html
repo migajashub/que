@@ -1,0 +1,146 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Avistave</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="2 - estilos.css">
+            <script src="scrip.js" defer></script>
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        </head>
+        <body>
+
+          <div class="wrapper">
+
+            <header>
+                <div class="left-section">
+                  <a href="index.html">
+                      <img class="logo" src="PAJARRACO_ALT.png" alt="AVISTAVE">
+                  </a>
+              </div>
+        
+                <div class="right-section">
+                  <a href="#" class="icon" onclick="toggleMenu('navegador_notif') ; event.stopPropagation();">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="pfp" onclick="toggleMenu('navegador_perfil'); event.stopPropagation();">
+                  <img src="icon.jpg" alt="FOTO_DE_PERFIL">
+              </a>
+                </div>
+            </header>
+        
+            <nav id="navegador_perfil" class="dropdown-menu" style="display: none;"> 
+                <ul>
+                    <li><a href="Perfil.html"><img src="icon.jpg" alt="Profile_Picture"></a></li>
+                    <li><a href="Perfil.html">Perfil</a></li>
+                    <li><a href="#">Guardados</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </nav>
+
+            <nav id="navegador_notif" class="dropdown-menu" style="display: none;">
+                <ul>
+                  <li><h3>Notificaciones</h3></li>
+                  <li><a href="#">[Nombre] te ha comenzado a seguir</a></li>
+                    <li><a href="#">[Nombre] te ha comenzado a seguir</a></li>
+                    <li><a href="#">[¡Medalla obtenida! Primera publicación]</a></li>
+                </ul>
+            </nav>
+        
+
+
+            <div class="sidebar">
+                <ul>
+                <li><a href="index.html" class = "iconside">
+                  <i class="fa fa-home" aria-hidden="true"></i>  Inicio</a></li>
+                  <li><a href="Publish.html" class = "iconside">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i>  Publicar</a></li>
+                  <li><a href="Forums.html" class = "iconside">
+                  <i class="fa fa-comments" aria-hidden="true"></i>  Foros</a></li>
+                  <li><a href="Perfil.html" class="iconside">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>  Perfil</a></li>
+                  <li><a href="#" class="iconside">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i>  Guardados</i></a></li>
+                  <li><a href="#" class="iconside">
+                    <i class="fa fa-cog" aria-hidden="true"></i>  Configuración</a></li>
+                  <li><a href="#" class="iconside">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>  Ayuda</a></li>
+              </ul>
+              </div>
+
+          <main>
+            <div class="Buttons">
+            <a href="index.html" class="CancelButton">
+                Cancelar
+            </a>
+                        <a href="Form.html" class="NextButton" onclick="validateUpload(event)" id="nextbutton">
+                Siguiente
+            </a>
+            </div>
+
+            <div class = "ImgUpload">
+                <h4>Sube tu imagen</h4> 
+                <input type="file"  accept="image/png, image/jpg, image/jpeg" name="image" id="file"  onchange="loadFile(event)">
+                <i>*</i>
+
+                <img id="output" src="notfound.jpg" alt="placeholder" onclick="triggerFileUpload()"/>
+                
+
+            </div>
+     
+                
+
+            </div>
+          </main>
+          <script>
+            // Keep track of the currently open menu
+            var currentMenu = null;
+        
+            function toggleMenu(menuId) {
+                var menu = document.getElementById(menuId);
+        
+                // If a different menu is already open, hide it
+                if (currentMenu && currentMenu !== menu) {
+                    currentMenu.style.display = 'none';
+                }
+        
+                // Toggle the clicked menu
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+        
+                // Update the current menu
+                currentMenu = menu;
+            }
+        
+            // Function to close the menu when clicking outside
+            function closeMenuOutside(event) {
+                if (currentMenu && !currentMenu.contains(event.target)) {
+                    currentMenu.style.display = 'none';
+                    currentMenu = null;
+                }
+            }
+        
+            // Attach the event listener to the document
+            document.addEventListener('click', closeMenuOutside);
+        
+        
+            </script>
+          <footer>
+            <div class="footer-content">
+              
+              <a href="index.html" class = "icon" onClick="Home()">
+                <i class="fa fa-home" aria-hidden="true"></i></a>
+              <a href="Publish.html" class = "icon" onClick="Upload()">
+                <i class="fa fa-plus-square" aria-hidden="true"></i></a>
+              <a href="Forums.html" class = "icon" onClick="Forums()">
+                <i class="fa fa-comments" aria-hidden="true"></i></a>
+      
+            </div>
+          </footer>
+        </div>
+        </body>
+    </html>
