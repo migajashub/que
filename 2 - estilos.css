@@ -17,6 +17,18 @@ body { font-family: Arial, Helvetica, sans-serif; background-color: #f5f6f1;}
 }
 
 
+/* Hover effect for the entire <a> inside the sidebar */
+.sidebar a:hover {
+  background-color: #3c5a2f; /* A darker shade for the hover effect */
+  color: #fff; /* Keeps the text color white when hovering */
+}
+
+/* Optional: Make the entire <li> darker on hover, not just the <a> */
+.sidebar li:hover {
+  background-color: #3c5a2f; /* Same darker shade as above */
+}
+
+
 .iconside {
   color: #fefff3;
   font-size: 32px;
