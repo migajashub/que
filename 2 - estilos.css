@@ -152,6 +152,16 @@ header {
   color:#fefff3;
 }
 
+/* Hover effect for the entire <a> */
+.dropdown-menu a:hover {
+  background-color: #3c5a2f; /* A darker shade for the hover effect */
+  color: #fff; /* Keeps the text color white when hovering */
+}
+
+/* Optional: Make the entire <li> darker on hover, not just the <a> */
+.dropdown-menu li:hover {
+  background-color: #3c5a2f; /* Same darker shade as above */
+}
 
 /* Additional styles to ensure content is not pushed off screen */
 body {
