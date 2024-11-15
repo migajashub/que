@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Avistave</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="lightbox.min.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="presentacion">
+            <div class="arrows">
+                <button id="anterior">◄</button>
+                <button id="siguiente">►</button>
+            </div>
+            <div class="diapositiva activa" style="background-color: rgb(67, 84, 39);">
+                <div class="imagenes_centradas"><img src="PAJARRACO_ALT.png"></div>
+                <h1 class="titulo"><mark>Avistave</mark></h1>
+                <ul class="subtituloP">
+                    <li>Alumno Stefan Gutierrez</li>
+                    <li>Profesor Wenceslao Zavala</li>
+                    <li>Curso Producción Digital</li>
+                </ul>
+            </div>
+            <div class="diapositiva">
+                <h2 class="subtitulo">¿De qué se trata?</h2>
+                <div class="uno">
+                    <ul class="texto_comun">
+                        <li>Red Social</li>
+                        <li>Comunidad con gustos en común</li>
+                        <li>Sistema de descubrimiento diverso</li>
+                        <li>Todo lo relacionado al avistaje y cuidado de aves</li>
+                    </ul>
+                        <div class="divextra">
+
+                            <div class="wireframes">
+                            <img src="CEL 1.png">
+                            <img src="COMPU 1.png">
+                            </div>
+                        <p>Planificación del inicio en web y mobile</p>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+            <div class="diapositiva">
+                <div class="container">
+                    <div class="image-container">
+                      <img src="Diapo3.png" alt="Elecciones de diseño" />
+                    </div>
+                    <div class="text-container">
+                      <h2 class="subtitulo">Diseño y Fundamentación</h2>
+                      <ul class="texto_comun">
+                        <li>Multiples caminos</li>
+                        <li>Monocromático</li>
+                        <li>Web inspirada en Toyhouse e Instagram</li>
+                        <li>Adaptabilidad</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+            </div>
+            <div class="diapositiva">
+                <div class="estoysufriendo">
+                    <img src="Captura-web.png">
+                    <img src="Captura-mobile.png">
+                </div>
+            </div>
+        </div>
+    </main>  
+    <footer>
+        <a href="https://migajashub.github.io/que/index.html">volver al sitio</a>
+    </footer>
+
+    <style>
+
+.estoysufriendo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.estoysufriendo img {
+    margin: 10px;
+    height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-container {
+  flex: 0 0 40%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.text-container {
+    flex: 0 0 60%
+}
+
+
+        * { margin: 0; padding: 0; }
+
+        .divextra {
+            display: block;
+        }
+
+        .wireframes {
+            display: inline-flex;
+            
+        }
+
+        .wireframes img {
+            margin: 5px;
+
+
+        }
+
+        .uno {
+            display: flex;
+            margin: 20px;
+        }
+
+
+
+        footer {
+            font-size: 25px;
+            color:#FFF;
+            text-decoration: dashed;
+            z-index: 3;
+            background-color: rgb(67, 84, 39);
+            padding: 20px;
+            text-align: center;
+            position:fixed;
+            width: 100%;
+            bottom: 0;
+
+        }
+
+        footer a {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer a:visited {
+            color: #FFF;
+
+        }
+
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #f5f6f1; }
+
+        mark { background-color: rgb(203, 223, 116); }
+        .imagenes_centradas { text-align: center; }
+        .titulo { margin: 30px; text-align: center; }
+        .subtitulo { margin-left: auto;  list-style-type: none; color: #4d6937;}
+        .subtituloP li { margin: 2px; text-align: center;color: rgb(255, 255, 255); font-weight: 100; }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        .presentacion {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .diapositiva {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            z-index: 0;
+        }
+        .activa { opacity: 1; z-index: 1; }
+        .square { background-color: aquamarine; width: 500px; height: auto; }
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2; /* Ensures arrows are on top */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#anterior, #siguiente {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+        @media screen and (max-width: 600px) {
+            .titulo { font-size: 80px; }
+            .subtitulo li { font-size: 20px; }
+            .imagenes_centradas img { width: 60%; height: auto; margin-top: 20vh; }
+            .subtitulo {font-size: 35px; margin-top:80px; margin-left: 80px;}
+            .uno { flex-direction: column;}
+            .divextra img {width: auto; height: 200px;}
+            .texto_comun {
+            margin:30px; margin-left: 80px; margin-top:0px; font-size: 22px;
+        }
+
+        .texto_comun li {
+            margin: 20px;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+
+        .estoysufriendo {
+            flex-direction: column;
+
+            margin-top:100px
+
+        }
+
+        .estoysufriendo img {
+            max-width:200px;
+            height: auto;
+        }
+
+        }
+
+        @media screen and (min-width: 600px) {
+            .titulo { font-size: 80px; }
+            .subtituloP li { font-size: 22px }
+            .imagenes_centradas img { width: 300px; height: auto; margin-top: 15vh; }
+            .subtitulo {font-size: 40px;margin-top:100px;margin-left: 100px;}
+            .subtituloP {font-size: 40px;margin-top:100px; text-align: center; color:#FFF}
+            .uno { flex-direction: row;}
+            .divextra img {width: auto; height: 400px;}
+            .texto_comun {font-size:20px;}
+            .texto_comun {
+            margin:40px; margin-left: 100px; margin-top:0px;
+        }
+
+        .texto_comun li {
+            margin: 30px;
+        }
+
+        .container {
+            flex-direction: row;
+        }
+
+        
+        .estoysufriendo {
+            flex-direction: row;
+            margin-top:80px
+
+        }
+
+        .estoysufriendo img {
+            max-height: 500px;
+            width: auto;
+        }
+
+        }
+
+        @media screen and (max-width: 400px) {
+            .titulo { font-size: 60px; }
+            .subtitulo li { font-size: 15px; }
+            .imagenes_centradas img { width: 200px; height: auto; margin-top: 30vh; }
+            .subtitulo {font-size:30px;margin-top:50px; margin-left: 50px;}
+            .divextra img {width: auto; height: 140px;}
+            .texto_comun {font-size:18px;}
+            .texto_comun {
+            margin:40px; margin-left: 50px; margin-top:0px;
+        }
+
+        .texto_comun li {
+            margin: 10px;
+        }
+        }
+    </style>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const diapositivas = document.querySelectorAll('.diapositiva');
+            let diapositivaActual = 0;
+
+            function cambiarDiapositiva(n) {
+                diapositivas[diapositivaActual].classList.remove('activa');
+                diapositivaActual = (diapositivaActual + n + diapositivas.length) % diapositivas.length;
+                diapositivas[diapositivaActual].classList.add('activa');
+            }
+
+            document.getElementById('anterior').addEventListener('click', () => cambiarDiapositiva(-1));
+            document.getElementById('siguiente').addEventListener('click', () => cambiarDiapositiva(1));
+        });
+    </script>
+</body>
+</html>
